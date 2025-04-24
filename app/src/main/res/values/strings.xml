@@ -3,4 +3,5 @@
     <string name="what_app_image">WhatsAppLogo</string>
     <string name="welcome_Screen_image">Welcome Screen</string>
     <string name="welcome_screen_button">Agree and continue</string>
+    <string name="Next_button">Next</string>
 </resources>
