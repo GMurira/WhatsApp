@@ -1,6 +1,7 @@
 package com.example.whatsapp.Data
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import com.example.whatsapp.R
 
 /**
@@ -9,21 +10,18 @@ import com.example.whatsapp.R
 
 data class Chat(
     @DrawableRes val displayPicture: Int,
-    val name: String,
-    val message: String
+    @StringRes val name: Int,
+    @StringRes val message: Int
 )
 
 val chats = listOf<Chat>(
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Mary", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Candy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Joe", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Doe", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Kamau", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Casty", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
-    Chat( R.drawable.x_twitter_brands, "Cindy", "Hello How are you"),
+    Chat(R.drawable.x_twitter_brands, R.string.Jane, R.string.message2),
+    Chat(R.drawable.instagram_brands, R.string.Jane, R.string.message2),
+    Chat(R.drawable.instagram_brands, R.string.Mary, R.string.message2),
+    Chat(R.drawable.x_twitter_brands, R.string.John, R.string.message2),
+    Chat(R.drawable.instagram_brands, R.string.Mary, R.string.message2),
+    Chat(R.drawable.x_twitter_brands, R.string.Mary, R.string.message2),
+    Chat(R.drawable.x_twitter_brands, R.string.Jane, R.string.message2),
+    Chat(R.drawable.whatsapp_brands, R.string.Jane, R.string.message2),
+    Chat(R.drawable.location_dot_solid__1_, R.string.Jane, R.string.message2),
 )

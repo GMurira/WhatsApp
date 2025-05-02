@@ -1,6 +1,7 @@
 package com.example.whatsapp.presentation.screens
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,11 +18,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.whatsapp.Data.Chat
+import com.example.whatsapp.Data.chats
 import com.example.whatsapp.R
 
 /**
@@ -29,12 +32,12 @@ import com.example.whatsapp.R
  */
 
 @Composable
-fun ChatItem( modifier: Modifier = Modifier){
+fun ChatItem( chat: Chat,modifier: Modifier = Modifier){
    Card( onClick = {}) {
        Row (modifier = Modifier.fillMaxWidth().padding(12.dp)){
-           ChatImageIcon()
+           ChatImageIcon(chat.displayPicture)
            Spacer(modifier = Modifier.width(20.dp))
-           ChatInformation()
+           ChatInformation(chat.name, chat.message)
            Spacer(modifier = Modifier.width(200.dp))
            ChatNotifications()
        }
@@ -44,9 +47,9 @@ fun ChatItem( modifier: Modifier = Modifier){
  * Chat-items  Image
  */
 @Composable
-fun ChatImageIcon(@DrawableRes,modifier: Modifier = Modifier){
+fun ChatImageIcon(@DrawableRes displayPicture: Int ,modifier: Modifier = Modifier){
     Image(
-        painter = painterResource(chat.displayPicture),
+        painter = painterResource(displayPicture),
         contentDescription = "Chat item image",
         modifier = Modifier.size(45.dp),
     )
@@ -56,12 +59,15 @@ fun ChatImageIcon(@DrawableRes,modifier: Modifier = Modifier){
  * Chat-item information
  */
 @Composable
-fun ChatInformation(){
+fun ChatInformation(
+    @StringRes chatName: Int,
+    @StringRes message: Int
+){
     Column ()
     {
-        Text( text = "Mary", fontWeight = FontWeight.Bold)
+        Text( text = stringResource(chatName), fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(5.dp))
-        Text( text = "Hello World", fontSize = 13.sp)
+        Text( text = stringResource(message), fontSize = 13.sp)
     }
 }
 
@@ -70,7 +76,7 @@ fun ChatInformation(){
  */
 @Composable
 fun ChatNotifications(modifier: Modifier = Modifier){
-    Column {
+    Row {
         Text( text = "11:00")
         //Chat noti
     }
@@ -81,5 +87,9 @@ fun ChatNotifications(modifier: Modifier = Modifier){
 @Preview(showBackground = true)
 @Composable
 fun ChatItemPreview(){
-    ChatItem()
+    ChatItem(chat = Chat(
+        R.drawable.facebook_brands,
+        name = R.string.Jane,
+        message = R.string.message1
+    ))
 }

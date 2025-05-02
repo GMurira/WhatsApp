@@ -4,4 +4,14 @@
     <string name="welcome_Screen_image">Welcome Screen</string>
     <string name="welcome_screen_button">Agree and continue</string>
     <string name="Next_button">Next</string>
+    <string name="Jane">Jane</string>
+    <string name="Mary">Mary</string>
+    <string name="John">John</string>
+    <string name="message1">Hello World</string>
+    <string name="message2"> How is the going</string>
+    <string name="status">Status</string>
+    <string name="chats">Chats</string>
+    <string name="updates">Updates</string>
+    <string name="communities">Communities</string>
+    <string name="calls">Calls</string>
 </resources>

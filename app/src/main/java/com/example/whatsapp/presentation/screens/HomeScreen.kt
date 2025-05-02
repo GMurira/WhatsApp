@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.MoreVert
@@ -29,6 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.whatsapp.Data.chats
 import com.example.whatsapp.R
 
 /**
@@ -53,9 +56,15 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier.size(45.dp)
                 )
             }
-        }) {
-        Column(modifier = Modifier.padding(it)) {
-            HorizontalDivider()
+        },
+        bottomBar = {
+            BottomAppBar()
+        }
+    ) { it ->
+        LazyColumn(contentPadding = it) {
+            items(chats){
+                ChatItem(chat = it)
+            }
         }
     }
 }
@@ -96,14 +105,6 @@ fun TopNavigationBar(modifier: Modifier = Modifier) {
 
 
 }
-/**
- * Chats Scroll area
- */
-
-/**
- * Bottom Navigation Bar
- */
-
 
 /**
  * Top app bar preview
