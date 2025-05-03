@@ -107,15 +107,6 @@ fun TopNavigationBar(modifier: Modifier = Modifier) {
 }
 
 /**
- * Top app bar preview
- */
-@Preview(showBackground = true)
-@Composable
-fun TopAppBarPreview() {
-
-}
-
-/**
  * Home Screen Preview
  */
 @Preview(showBackground = true)

@@ -25,7 +25,7 @@ import com.example.whatsapp.R
  */
 @Composable
 fun BottomAppBar( modifier: Modifier = Modifier){
-    Box {
+    Surface (modifier = modifier) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
